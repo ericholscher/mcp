@@ -69,6 +69,13 @@ Restart Claude Desktop to pick up changes.
 - `lint_file(path, styles?, min_alert_level?, config_path?)` — Lints a file, returns normal CLI output in `output`
 - `list_alert_levels()` — Returns `["suggestion","warning","error"]`
 
+The default `.vale.ini` includes:
+- **Microsoft** style guide
+- **write-good** for plain English
+- **proselint** for best practices
+
+These styles are automatically synced during Docker build.
+
 Notes:
 - For some Vale versions, `--styles` may not be supported; prefer setting styles via your `.vale.ini`/`.vale.yaml` and pass `config_path` when needed.
 - We pass `--no-exit` so results are returned even when issues are found.

@@ -17,6 +17,9 @@ COPY . /app
 # Install Python dependencies
 RUN pip install --no-cache-dir fastmcp httpx
 
+# Install Vale style packages
+RUN vale sync
+
 # Set Vale path
 ENV VALE_PATH=/usr/local/bin/vale
 
