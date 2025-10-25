@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "readthedocs": {
+      "command": "uv",
+      "args": ["run", "/Users/eric/projects/rtd-mcp/rtd_mcp.py"],
+      "env": {
+        "RTD_TOKEN": "<your_rtd_token_here>"
+      }
+    },
+    "vale": {
+      "command": "uv",
+      "args": ["run", "/Users/eric/projects/rtd-mcp/vale_mcp.py"],
+      "env": {
+        "VALE_PATH": "/usr/local/bin/vale"
+      }
+    }
+  }
+}
