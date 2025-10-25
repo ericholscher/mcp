@@ -21,4 +21,4 @@ RUN pip install --no-cache-dir fastmcp httpx
 ENV VALE_PATH=/usr/local/bin/vale
 
 # Default command (fastmcp.cloud will override this)
-CMD ["python", "rtd_mcp.py"]
+CMD ["python", "vale_mcp.py"]
