@@ -75,16 +75,28 @@ Notes:
 
 ## Deploying to fastmcp.cloud
 
-This repo is configured for deployment to [fastmcp.cloud](https://fastmcp.cloud).
+This repo is configured for deployment to [fastmcp.cloud](https://fastmcp.cloud) with Docker support.
+
+### Deployment Steps
 
 1. Fork or import this repo to your GitHub account
 2. Connect your GitHub account to fastmcp.cloud
 3. Deploy the servers from the fastmcp.cloud dashboard
 4. Set environment variables:
    - For `readthedocs`: Set `RTD_TOKEN` to your Read the Docs API token
-   - For `vale`: Set `VALE_PATH` to the Vale binary path (or leave blank to use system PATH)
+   - For `vale`: Vale is pre-installed in the Docker image at `/usr/local/bin/vale`
 
-The `fastmcp.yaml` configuration file defines both servers for deployment.
+The `fastmcp.yaml` configuration file defines both servers, and the `Dockerfile` ensures Vale is available in the cloud environment.
+
+### Docker Build (Local Testing)
+
+To test the Docker image locally:
+
+```bash
+docker build -t mcp-servers .
+docker run -e RTD_TOKEN=your_token mcp-servers python rtd_mcp.py
+docker run mcp-servers python vale_mcp.py
+```
 
 ## Troubleshooting
 
