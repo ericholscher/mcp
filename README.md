@@ -73,8 +73,21 @@ Notes:
 - For some Vale versions, `--styles` may not be supported; prefer setting styles via your `.vale.ini`/`.vale.yaml` and pass `config_path` when needed.
 - We pass `--no-exit` so results are returned even when issues are found.
 
+## Deploying to fastmcp.cloud
+
+This repo is configured for deployment to [fastmcp.cloud](https://fastmcp.cloud).
+
+1. Fork or import this repo to your GitHub account
+2. Connect your GitHub account to fastmcp.cloud
+3. Deploy the servers from the fastmcp.cloud dashboard
+4. Set environment variables:
+   - For `readthedocs`: Set `RTD_TOKEN` to your Read the Docs API token
+   - For `vale`: Set `VALE_PATH` to the Vale binary path (or leave blank to use system PATH)
+
+The `fastmcp.yaml` configuration file defines both servers for deployment.
+
 ## Troubleshooting
 
 - If `fastmcp` import fails, install it: `uv add fastmcp` or `pip install fastmcp`.
-- If Vale isn’t found, install it from https://vale.sh or set `VALE_PATH` to the binary.
+- If Vale isn't found, install it from https://vale.sh or set `VALE_PATH` to the binary.
 - To increase rule coverage for stdin, set an appropriate `ext` like `.md` or `.rst`.

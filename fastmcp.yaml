@@ -1,0 +1,11 @@
+servers:
+  readthedocs:
+    module: rtd_mcp
+    description: "Read the Docs API tools and resources"
+    env:
+      - RTD_TOKEN
+  vale:
+    module: vale_mcp
+    description: "Vale linter tools using local CLI"
+    env:
+      - VALE_PATH
